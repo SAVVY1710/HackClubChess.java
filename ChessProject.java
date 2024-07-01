@@ -6,6 +6,7 @@ Chess Game for fun
 */
 
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 public class ChessProject extends JFrame
 {
@@ -30,7 +31,7 @@ public class ChessProject extends JFrame
     }
 }
 
-class HGPanel extends JPanel {
+class HGPanel extends JPanel implements MouseListener {
 
     Rectangle[][] squares;
     Point[][] squarepoint;
@@ -61,6 +62,7 @@ class HGPanel extends JPanel {
         setBackground(Color.green);
         y = 0;
         x = 8;
+        addMouseListener(this);
         whiterook1 = new ImageIcon("White_Rook.png").getImage();
         whiterook2 = new ImageIcon("White_Rook.png").getImage();
         whitehorse1 = new ImageIcon("White_Horse.png").getImage();
@@ -206,5 +208,99 @@ class HGPanel extends JPanel {
         g.drawImage(blackpawn7, (int) bl_pawnrect[6].getX(), (int) bl_pawnrect[6].getY(), 90, 90, null);
         g.drawImage(blackpawn8, (int) bl_pawnrect[7].getX(), (int) bl_pawnrect[7].getY(), 90, 90, null);
 
+    }
+    public void mousePressed(MouseEvent e)
+    {
+        int x = e.getX();
+        int y = e.getY();
+
+        if(bl_rookrect1.contains(x,y))
+        {
+            rookLogic();
+        }
+        if(bl_rookrect2.contains(x,y))
+        {
+            rookLogic();
+        }
+        if(wrookrect1.contains(x,y))
+        {
+            rookLogic();
+        }
+        if(wrookrect2.contains(x,y))
+        {
+            rookLogic();
+        }
+        if(bl_horserect1.contains(x,y))
+        {
+            horseLogic();
+        }
+        if(bl_horserect2.contains(x,y))
+        {
+            horseLogic();
+        }
+        if(whorserect1.contains(x,y))
+        {
+            horseLogic();
+        }
+        if(whorserect2.contains(x,y))
+        {
+            horseLogic();
+        }
+        if(bl_bishoprect1.contains(x,y))
+        {
+            bishopLogic();
+        }
+        if(bl_bishoprect2.contains(x,y))
+        {
+            bishopLogic();
+        }
+        if(wbishoprect1.contains(x,y))
+        {
+            bishopLogic();
+        }
+        if(wbishoprect2.contains(x,y))
+        {
+            bishopLogic();
+        }
+    }
+
+    public void mouseExited(MouseEvent e) {
+
+    }
+
+    public void mouseReleased(MouseEvent e) {
+
+    }
+
+    public void mouseClicked(MouseEvent e) {
+
+    }
+
+    public void mouseEntered(MouseEvent e) {
+
+    }
+    public void rookLogic()
+    {
+
+    }
+    public void pawnLogic()
+    {
+
+    }
+    public void queenLogic()
+    {
+
+    }
+    public void KingLogic()
+    {
+
+    }
+    public void bishopLogic()
+    {
+        
+    }
+    public void horseLogic()
+    {
+        
     }
 }
